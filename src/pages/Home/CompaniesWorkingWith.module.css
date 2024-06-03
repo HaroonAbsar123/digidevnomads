@@ -1,0 +1,45 @@
+.image {
+  width: auto;
+  height: 5rem;
+  padding: 0 15px;
+  object-fit: contain;
+  /* background: #16161e; */
+}
+
+.image:last-of-type {
+  padding-left: 0;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 5rem;
+}
+
+.wrapper {
+  position: absolute;
+  display: flex;
+  width: 300%;
+}
+
+.heading{
+  font-size: 1rem;
+  color: #ccc;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.section {
+  display: flex;
+  animation: swipe var(--speed) linear infinite;
+}
+
+@keyframes swipe {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

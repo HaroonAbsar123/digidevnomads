@@ -1,0 +1,60 @@
+
+.container{
+    text-align: left;
+    padding: 3rem 3rem;
+    /* display: flex;
+    flex-wrap: wrap;
+    gap: 10px; */
+}
+
+.titleColumnTitle{
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    line-height: 4rem;
+    text-align: left;
+}
+.serviceColumn {
+    background-color: #181822;
+    border-radius: 1.5rem;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+.serviceColumnTitle{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.serviceColumnPara{
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.serviceColumnIcon{
+    font-size: 1rem;
+}
+
+.readMoreButton{
+    background: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    padding-left: 0px;
+    margin-top: 20px;
+}
+
+.readMoreButton:hover{
+    transform: scale(1.05);
+
+}
