@@ -17,6 +17,7 @@
 }
 
 .serviceColumn{
+    background-color: #181822;
     border-radius: 1.5rem;
     box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
     overflow: hidden;

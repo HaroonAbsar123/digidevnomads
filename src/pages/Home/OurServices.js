@@ -13,9 +13,11 @@ export default function OurServices(){
           <Container className="home-content">
           <div className={classes.container}>
             <Row style={{flex: 1, display: 'flex', gap: '10px'}}>
-                <Col style={{flex: 1}}>
+                <Col style={{flex: 1, display: 'flex', alignItems: 'center'}}>
+                    <div>
                 <div className={classes.titleColumnTitle} >UNLOCK REVENUE GROWTH FOR YOUR BUSINESS</div>
             <button className="buttonHome">VIEW ALL SERVICES</button>
+            </div>
                 </Col>
                 <Col style={{flex: 1}} className={classes.serviceColumn}>
                 <div style={{flex: 0.3, display: 'flex', justifyContent: 'center', filter: "blur(0px)"}}>

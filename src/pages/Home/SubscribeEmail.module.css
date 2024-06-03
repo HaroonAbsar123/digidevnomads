@@ -1,0 +1,41 @@
+
+.container{
+    flex: 1;
+    text-align: left;
+    background-color: #181822;
+    padding: 3rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.serviceColumnTitle{
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+    flex: 1
+}
+
+.inputContainer{
+    flex: 1;
+    background-color: #1e1e1e;
+    border: 2px solid #2e2e2e;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 80px;
+    padding: 0px 10px;
+    padding-left: 25px;
+}
+
+.inputContainer input{
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ccc;
+
+}

@@ -1,0 +1,19 @@
+
+.container{
+    flex: 1;
+    text-align: left;
+    padding: 3rem 3rem;
+}
+
+.cardTitle{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.cardDescription{
+    color: #ccc;
+    margin-top: 15px;
+
+}
