@@ -1,0 +1,35 @@
+
+.sectionContainer{
+  position: relative;
+  z-index: 1;
+  background-image: url("../../Assets/bbblurry\ \(1\).svg");
+  min-height: 45rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 6rem auto;
+    margin-top: 0px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 1rem;
+    border-radius: 3rem;
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
+    background-color: rgba(255,255,255,0.03);
+    
+
+}
+
+
+
+  .colHeading{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px auto;
+  }

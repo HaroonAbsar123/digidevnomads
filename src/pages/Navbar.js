@@ -3,16 +3,17 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import { MyContext } from "../Context/MyContext";
 
 function NavBar() {
-  const auth=getAuth();
-  const {userDetails} = useContext(MyContext)
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
-  const navigate=useNavigate();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const { serviceRef, contactUsRef } = useContext(MyContext);
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -34,9 +35,12 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand  onClick={() => {
-          navigate("/")
-        }} className="d-flex">
+        <Navbar.Brand
+          onClick={() => {
+            navigate("/");
+          }}
+          className="d-flex"
+        >
           <img src={logo} className="img-fluid logo" alt="brand" />
         </Navbar.Brand>
         <Navbar.Toggle
@@ -53,11 +57,11 @@ function NavBar() {
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                 HOME
+                HOME
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="#about-us"
@@ -65,21 +69,41 @@ function NavBar() {
               >
                  ABOUT US
               </Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
 
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="#our-services"
-                onClick={() => updateExpanded(false)}
-              >
                 
+                to={
+                  (location.pathname === "/book-appointment") ?
+                  "/#our-services"
+                  :
+                  "#our-services"
+                }
+                onClick={() => {
+                  updateExpanded(false);
+                  if (location.pathname === "/book-appointment") {
+                    navigate("/");
+                    setTimeout(() => {
+                      serviceRef.current.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center",
+                      });
+                    }, 200);
+                  } else {
+                    serviceRef.current.scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                    });
+                  }
+                }}
+              >
                 OUR SERVICES
               </Nav.Link>
             </Nav.Item>
 
-            
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="#portfolio"
@@ -88,31 +112,49 @@ function NavBar() {
                 
                 PORTFOLIO
               </Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
 
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="#contact-us"
-                onClick={() => updateExpanded(false)}
+                to={
+                  (location.pathname === "/book-appointment") ?
+                  "/#contact-us"
+                  :
+                  "#contact-us"
+                }
+                onClick={() => {
+                  updateExpanded(false);
+                  if (location.pathname === "/book-appointment") {
+                    navigate("/");
+                    setTimeout(() => {
+                      contactUsRef.current.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center",
+                      });
+                    }, 200);
+                  } else {
+                    contactUsRef.current.scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                    });
+                  }
+                }}
               >
-                 CONTACT US
+                CONTACT US
               </Nav.Link>
             </Nav.Item>
 
-    <Nav.Item className="fork-btn">
-    <Nav.Link
-      as={Link}
-      className="fork-btn-inner"
-      to="/book-appointment"
-      onClick={() => updateExpanded(false)}
-    >
-      BOOK APPOINTMENT
-
-    </Nav.Link>
-  </Nav.Item>
-
-
+            <Nav.Item className="fork-btn">
+              <Nav.Link
+                as={Link}
+                className="fork-btn-inner"
+                to="/book-appointment"
+                onClick={() => updateExpanded(false)}
+              >
+                BOOK APPOINTMENT
+              </Nav.Link>
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>

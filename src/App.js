@@ -15,6 +15,16 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { MyContextProvider } from "./Context/MyContext";
 import { getAuth } from "firebase/auth";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import BookAppointment from "./pages/BookAppointment/BookAppointment";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -31,16 +41,22 @@ function App() {
 
   return (
     <Router>
+      
+    
       <MyContextProvider>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
         <Navbar />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/book-appointment" element={<BookAppointment />} />
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
         {/* <FinalFooter /> */}
+    </ThemeProvider>
       </div>
       </MyContextProvider>
     </Router>

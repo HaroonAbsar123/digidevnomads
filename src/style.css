@@ -72,7 +72,7 @@ button:focus {
   position: fixed !important;
   transition: all 0.3s ease-out 0s !important;
   padding: 0.3rem 2rem !important;
-  font-size: 1rem !important;
+  font-size: 1.1rem !important;
 }
 
 .navbar-toggler {
@@ -304,6 +304,32 @@ button:focus {
   flex-direction: row;
   gap: 10px
 }
+
+/* ___OUR SERVICES________________ */
+
+
+.services-section {
+  position: relative;
+  z-index: 1;
+  background-image: url("./Assets/bbblurry.svg");
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+
+.services-content {
+  padding-top: 5rem;
+  color: whitesmoke;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex: 1;
+  padding-bottom: 2rem;
+  flex-direction: row;
+  gap: 10px
+}
+
 
 .heading {
   font-size: 2.4em;

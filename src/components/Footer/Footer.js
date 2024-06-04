@@ -26,7 +26,7 @@ function Footer() {
       <Container className="footer-content">
     <div className={classes.Footer}>
       <div className="footerImageText">LET'S TALK ABOUT PROJECT</div>
-      <div className={classes.para} >At DIGIDEVNOMADS we specialize in designing, marketing, web development, mobile application development and email marketing.</div>
+      <div className={classes.para} >At DigiDevNomads we specialize in designing, marketing, web development, mobile application development and email marketing.</div>
       <div style={{margin: '20px 10px'}}>
         <button className="buttonHome">LET'S TALK</button>
       </div>

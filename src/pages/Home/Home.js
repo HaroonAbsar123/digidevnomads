@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Banner from "./Banner";
 import CompaniesWorkingWith from "./CompaniesWorkingWith";
+import ContactUs from "./ContactUs";
 import ImageInText from "./ImageInText";
 import NewIdeas from "./NewIdeas";
 import OurServices from "./OurServices";
@@ -22,6 +23,7 @@ function Home() {
       <NewIdeas />
       <OurTeam />
       <ImageInText />
+      <ContactUs />
       <SubscribeEmail />
       <Footer />
     </section>
