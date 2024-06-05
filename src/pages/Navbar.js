@@ -13,7 +13,7 @@ function NavBar() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { serviceRef, contactUsRef } = useContext(MyContext);
+  const { serviceRef, contactUsRef, appointmentRef, portfolioRef } = useContext(MyContext);
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -55,11 +55,11 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
                 HOME
               </Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
 
             {/* <Nav.Item>
               <Nav.Link
@@ -83,36 +83,32 @@ function NavBar() {
                 }
                 onClick={() => {
                   updateExpanded(false);
-                  if (location.pathname === "/book-appointment") {
-                    navigate("/");
-                    setTimeout(() => {
-                      serviceRef.current.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center",
-                      });
-                    }, 200);
-                  } else {
-                    serviceRef.current.scrollIntoView({
-                      behavior: "smooth",
-                      block: "center",
-                    });
-                  }
+                  serviceRef.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
                 }}
               >
                 OUR SERVICES
               </Nav.Link>
             </Nav.Item>
 
-            {/* <Nav.Item>
+            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="#portfolio"
-                onClick={() => updateExpanded(false)}
+                onClick={() => {
+                  updateExpanded(false);
+                  portfolioRef.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
+                }}
               >
                 
                 PORTFOLIO
               </Nav.Link>
-            </Nav.Item> */}
+            </Nav.Item>
 
             <Nav.Item>
               <Nav.Link
@@ -125,20 +121,10 @@ function NavBar() {
                 }
                 onClick={() => {
                   updateExpanded(false);
-                  if (location.pathname === "/book-appointment") {
-                    navigate("/");
-                    setTimeout(() => {
-                      contactUsRef.current.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center",
-                      });
-                    }, 200);
-                  } else {
-                    contactUsRef.current.scrollIntoView({
-                      behavior: "smooth",
-                      block: "center",
-                    });
-                  }
+                  contactUsRef.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
                 }}
               >
                 CONTACT US
@@ -146,14 +132,21 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item className="fork-btn">
-              <Nav.Link
+              <button
                 as={Link}
-                className="fork-btn-inner"
-                to="/book-appointment"
-                onClick={() => updateExpanded(false)}
+                className="buttonHome"
+                style={{margin: '0px 0px 0px 10px', padding: '0px 10px', maxHeight: '30px', height: 'max-content', fontSize: '1rem'}}
+                onClick={() => {
+                  updateExpanded(false);
+                  window.location.hash = '#book-appointment';
+                  appointmentRef.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
+                }}
               >
                 BOOK APPOINTMENT
-              </Nav.Link>
+              </button>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

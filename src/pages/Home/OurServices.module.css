@@ -2,9 +2,6 @@
 .container{
     text-align: left;
     padding: 3rem 3rem;
-    /* display: flex;
-    flex-wrap: wrap;
-    gap: 10px; */
 }
 
 .titleColumnTitle{
@@ -14,6 +11,7 @@
     line-height: 4rem;
     text-align: left;
 }
+
 .serviceColumn {
     background-color: #181822;
     border-radius: 1.5rem;
@@ -23,11 +21,8 @@
     justify-content: space-between;
     flex: 1;
     transition: all 0.3s ease-in-out;
+    height: max-content !important;
 }
-
-
-
-
 
 .serviceColumnTitle{
     font-size: 1.5rem;
@@ -60,3 +55,18 @@
     transform: scale(1.05);
 
 }
+
+
+
+@media (max-width: 767px) {
+
+    .container{
+        padding: 1rem;
+    }
+
+    
+.titleColumnTitle{
+    font-size: 2.3rem;
+    line-height: 2.5rem;
+}
+  }

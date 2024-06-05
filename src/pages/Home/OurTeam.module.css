@@ -54,3 +54,35 @@
     transform: scale(1.05);
 
 }
+
+.ourTeamImage{
+    min-width: 100% !important; 
+    height: 300px!important;
+    object-fit: cover!important;
+    object-position: center!important;
+}
+
+.ourTeamCol{
+    padding: 0px !important;
+    border-radius: 1rem !important;
+    min-width: 200px !important;
+}
+
+.firstCol{
+    text-align: left;
+}
+
+
+@media (max-width: 767px) {
+
+    .container{
+        padding: 1rem;
+    }
+    .ourTeamImage{
+        height: 150px!important;
+    }
+    .titleColumnTitle{
+        font-size: 2.3rem;
+        line-height: 2.5rem;
+    }
+  }

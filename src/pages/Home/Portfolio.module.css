@@ -20,6 +20,11 @@
     border-radius: 1.5rem;
     box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
     overflow: hidden;
+    
+    padding: 0px !important;
+    border-radius: 1rem !important;
+    overflow: hidden !important;
+    min-width: 200px !important;
 }
 
 .serviceColumnTitle{
@@ -53,3 +58,31 @@
     transform: scale(1.05);
 
 }
+
+
+.ourTeamImage{
+    min-width: 100% !important; 
+    height: 300px!important;
+    object-fit: cover!important;
+    object-position: center!important;
+}
+
+.firstCol{
+    text-align: left;
+}
+
+
+@media (max-width: 767px) {
+
+    .container{
+        padding: 1rem;
+    }
+    .ourTeamImage{
+        height: 150px!important;
+    }
+    
+.titleColumnTitle{
+    font-size: 2.3rem;
+    line-height: 2.5rem;
+}
+  }

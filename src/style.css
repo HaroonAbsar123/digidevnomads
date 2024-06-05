@@ -38,24 +38,22 @@ button:focus {
 /* --------- */
 
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #1e1e1e;
+  background: #16161e;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #ccc;
-  border-radius: 12px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #ccc;
-  border-radius: 12px;
 }
 
 /* --------- */
@@ -73,6 +71,7 @@ button:focus {
   transition: all 0.3s ease-out 0s !important;
   padding: 0.3rem 2rem !important;
   font-size: 1.1rem !important;
+  padding-top: 0.6rem !important;
 }
 
 .navbar-toggler {
@@ -184,7 +183,7 @@ button:focus {
   height: 5px;
   width: 0;
   border-radius: 16px;
-  background: #016cd6;
+  background: #ccc;
   bottom: 1px;
   left: 0;
   z-index: -1;
@@ -738,6 +737,7 @@ button:focus {
   border-radius: 30px;
   z-index: 1;
   margin-top: 20px;
+  margin-bottom: 20px;
   font-weight: bold;
 }
 
@@ -811,8 +811,6 @@ button:focus {
   background-size: cover;
   -webkit-text-fill-color:transparent;
   -webkit-background-clip:text;
-  /* animation: marquee 10s linear infinite; */
-  white-space: nowrap;
 }
 @keyframes marquee {
   from {
@@ -820,5 +818,18 @@ button:focus {
   }
   to {
     transform: translateX(-100%);
+  }
+}
+
+
+@media (max-width: 767px) {
+  .footerImageText {
+    font-size: 25px;
+  }
+  .ben {
+    font-size: 40px;
+  }
+  .home-content{
+    padding-top: 2rem;
   }
 }

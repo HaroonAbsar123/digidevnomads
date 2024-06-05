@@ -12,7 +12,7 @@ export default function ImageInText() {
         <div className="ben">GET IN TOUCH  </div>
     </div>
     
-    <div style={{display: 'flex', gap: '20px', justifyContent: 'center', alignItems: 'center', fontSize: '1.2rem'}}>
+    <div style={{display: 'flex', gap: '20px', justifyContent: 'center', alignItems: 'center', fontSize: '1.2rem', flexWrap: 'wrap'}}>
     <div>check@example.com</div>
     <div>+92-123-1231234</div>
 

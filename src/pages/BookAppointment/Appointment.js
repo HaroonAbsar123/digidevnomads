@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Col, Row } from "react-bootstrap";
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -8,6 +8,7 @@ import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import classes from './Appointment.module.css';
 import { FormControl, Select, Button, MenuItem } from "@mui/material";
+import { MyContext } from "../../Context/MyContext";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -24,6 +25,8 @@ export default function Appointment() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
   const [selectedTimezone, setSelectedTimezone] = useState('Asia/Karachi');
+
+  const {appointmentRef} = useContext(MyContext)
 
   useEffect(() => {
     // Automatically select the next available date (excluding Sundays)
@@ -70,13 +73,19 @@ export default function Appointment() {
   };
 
   return (
-    <section className={classes.sectionContainer}>
+    <section ref={appointmentRef} className={classes.sectionContainer}>
+      
+      <div className={classes.title}>BOOK APPOINTMENT</div>
+
       <div className={classes.container}>
+
+
         <Row>
-          <Col style={{ textAlign: 'center', flex: 1 }}>
+          <Col style={{ textAlign: 'center', flex: 1, minWidth: '300px' }}>
             <div className={classes.colHeading}>Select Date</div>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DateCalendar
+                style={{transform: 'scale(1.2)', marginTop: '45px', marginBottom: '30px'}}
                 disablePast
                 shouldDisableDate={disableDates}
                 onChange={handleDateChange}
@@ -84,27 +93,13 @@ export default function Appointment() {
               />
             </LocalizationProvider>
           </Col>
-          <Col style={{ flex: 1, textAlign: 'center' }}>
+          <Col style={{ flex: 1, textAlign: 'center', minWidth: '300px' }}>
             <div className={classes.colHeading}>Available Starting Times</div>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               {selectedDate && renderTimes()}
             </div>
           </Col>
         </Row>
-        {/* <Row style={{ marginTop: '1em', textAlign: 'center' }}>
-          <Col>
-            <div className={classes.colHeading} style={{ marginTop: '0px' }}>Select Timezone</div>
-            <FormControl fullWidth>
-              <Select value={selectedTimezone} onChange={handleTimezoneChange}>
-                {timezones.map((tz, index) => (
-                  <MenuItem key={index} value={tz}>
-                    {tz}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Col>
-        </Row> */}
         
       <button style={{marginTop: '0px', width: 'max-content', alignSelf: 'center', marginBottom: '2rem'}} onClick={handleSubmit} className="buttonHome">
               Submit

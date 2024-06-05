@@ -18,6 +18,7 @@ import { getAuth } from "firebase/auth";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import BookAppointment from "./pages/BookAppointment/BookAppointment";
+import Particle from "./pages/Particle";
 
 const darkTheme = createTheme({
   palette: {
@@ -52,7 +53,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/book-appointment" element={<BookAppointment />} />
+          {/* <Route path="/book-appointment" element={<BookAppointment />} /> */}
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
         {/* <FinalFooter /> */}

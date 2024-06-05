@@ -14,8 +14,9 @@
 .serviceColumnTitle{
     font-size: 3.5rem;
     font-weight: bold;
-    color: #fff;
-    flex: 1
+    color: #ccc;
+    flex: 1;
+    text-align: center;
 }
 
 .inputContainer{
@@ -39,3 +40,29 @@
     color: #ccc;
 
 }
+
+@media (max-width: 767px) {
+    
+.container{
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 1rem;
+}
+
+    .serviceColumnTitle{
+        
+        font-size: 2rem;
+    }
+    .inputContainer{
+        flex: 1;
+        background-color: #1e1e1e;
+        border: 2px solid #2e2e2e;
+        border-radius: 3rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 60px;
+        justify-content: space-between;
+        padding-right: 0px;
+    }
+  }

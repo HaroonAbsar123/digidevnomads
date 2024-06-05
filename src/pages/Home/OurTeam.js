@@ -1,48 +1,184 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Container, Col, Row } from "react-bootstrap";
-import classes from './OurTeam.module.css';
+import classes from "./OurTeam.module.css";
 
-import Haroon from '../../Assets/Team/Haroon.jpg';
+import Haroon from "../../Assets/ourTeam.jpg";
+import Testimonial from "../../components/Testimonial/Testimonial";
+import Carousel from "react-bootstrap/Carousel";
 
-export default function OurTeam(){
+export default function OurTeam() {
 
-    return(
-        <section style={{ position: 'relative' }}>
-        <Container fluid className="home-portfolio" id="home">
-          <Container className="home-content">
-        <div className={classes.container}>
-            <Row style={{flex: 1, display: 'flex', gap: '10px'}}>
-                <Col style={{flex: 1, display: 'flex', alignItems: 'center', padding: '0px'}}>
-                    <div>
-                <div className={classes.titleColumnTitle} >PEOPLE LOVED OUR TEAM</div>
-            <button className="buttonHome">VIEW ALL TEAM</button>
-            </div>
-                </Col>
-                <Col style={{flex: 1, padding: '0px'}} >
-                        <Col style={{padding: '0px', borderRadius: '1rem', overflow: 'hidden'}}>
-                <img src={Haroon} alt="" style={{ width: '100%', height: '300px', objectFit: 'cover', objectPosition: 'center'}}/>
-                        </Col>
-                </Col>
+  
+  const containerRef = useRef(null);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    if (containerRef.current && cardRef.current) {
+      containerRef.current.style.minHeight = `${cardRef.current.offsetHeight}px`;
+    }
+  }, []);
+
+
+
+  return (
+    <section style={{ position: "relative" }}>
+      <Container fluid className="home-portfolio" id="home">
+        <Container className="home-content">
+          <div className={classes.container}>
+            <Row style={{ flex: 1, display: "flex", gap: "10px" }}>
+              <Col
+                className={classes.firstCol}
+                style={{
+                  flex: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "0px",
+                  minWidth: "300px",
+                }}
+              >
+                <div>
+                  <div className={classes.titleColumnTitle}>
+                    PEOPLE LOVED OUR TEAM
+                  </div>
+                  <button className="buttonHome">VIEW ALL TEAM</button>
+                </div>
+              </Col>
+              <Col className={classes.ourTeamCol}>
+
+              <div class="containerMain noselect" 
+ref={containerRef}>
+
+  <div class="canvas">
+    <div class="tracker tr-1"></div>
+    <div class="tracker tr-2"></div>
+    <div class="tracker tr-3"></div>
+    <div class="tracker tr-4"></div>
+    <div class="tracker tr-5"></div>
+    <div class="tracker tr-6"></div>
+    <div class="tracker tr-7"></div>
+    <div class="tracker tr-8"></div>
+    <div class="tracker tr-9"></div>
+    <div class="tracker tr-10"></div>
+    <div class="tracker tr-11"></div>
+    <div class="tracker tr-12"></div>
+    <div class="tracker tr-13"></div>
+    <div class="tracker tr-14"></div>
+    <div class="tracker tr-15"></div>
+    <div class="tracker tr-16"></div>
+    <div class="tracker tr-17"></div>
+    <div class="tracker tr-18"></div>
+    <div class="tracker tr-19"></div>
+    <div class="tracker tr-20"></div>
+    <div class="tracker tr-21"></div>
+    <div class="tracker tr-22"></div>
+    <div class="tracker tr-23"></div>
+    <div class="tracker tr-24"></div>
+    <div class="tracker tr-25"></div>
+    <div id="card" ref={cardRef} style={{ backgroundImage: `url(${Haroon})`, borderRadius: '1rem', height: '300px', width: '100%', backgroundSize: 'cover', backgroundPosition: 'center' }} className={classes.serviceColumn}>
+    </div>
+  </div>
+</div>
+
+                {/* <img src={Haroon} alt="" className={classes.ourTeamImage} /> */}
+              </Col>
             </Row>
-            <Row style={{flex: 1, display: 'flex', gap: '10px', marginTop: '10px'}}>
-                        <Col style={{padding: '0px', borderRadius: '1rem', overflow: 'hidden'}}>
-                <img src={Haroon} alt="" style={{ width: 'auto', height: '300px', objectFit: 'cover', objectPosition: 'center'}}/>
-                        </Col>
-                        <Col style={{padding: '0px', borderRadius: '1rem', overflow: 'hidden'}}>
-                <img src={Haroon} alt="" style={{ width: 'auto', height: '300px', objectFit: 'cover', objectPosition: 'center'}}/>
-                        </Col>
-                        <Col style={{padding: '0px', borderRadius: '1rem', overflow: 'hidden'}}>
-                <img src={Haroon} alt="" style={{ width: 'auto', height: '300px', objectFit: 'cover', objectPosition: 'center'}}/>
-                        </Col>
-                        <Col style={{padding: '0px', borderRadius: '1rem', overflow: 'hidden'}}>
-                <img src={Haroon} alt="" style={{ width: 'auto', height: '300px', objectFit: 'cover', objectPosition: 'center'}}/>
-                        </Col>
+            <Row style={{ flex: 1, marginTop: "10px" }}>
+              <Carousel interval={2000} style={{overflow: 'hidden', padding: '0px'}} indicators={false} controls={false} >
+                <Carousel.Item>
+                  <div style={{ flex: 1, display: "flex", gap: "10px", width: '100%', flexWrap: 'wrap' }}>
+                      <Testimonial
+                        title="Testimonial"
+                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua"
+                      />
+                      {/* <img src={Haroon} alt="" className={classes.ourTeamImage}/> */}
+                      <Testimonial
+                        title="Testimonial"
+                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua"
+                      />
+                      <Testimonial
+                        title="Testimonial"
+                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua"
+                      />
+                      <Testimonial
+                        title="Testimonial"
+                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua"
+                      />
+                  </div>
+                </Carousel.Item>
+
+                <Carousel.Item>
+                  <div style={{ flex: 1, display: "flex", gap: "10px", width: '100%', flexWrap: 'wrap'}}>
+                      <Testimonial
+                        title="Testimonial"
+                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua"
+                      />
+                      {/* <img src={Haroon} alt="" className={classes.ourTeamImage}/> */}
+                      <Testimonial
+                        title="Testimonial"
+                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua"
+                      />
+                      <Testimonial
+                        title="Testimonial"
+                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua"
+                      />
+                      <Testimonial
+                        title="Testimonial"
+                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua"
+                      />
+                  </div>
+                </Carousel.Item>
+
+                <Carousel.Item>
+                  <div style={{ flex: 1, display: "flex", gap: "10px", width: '100%',flexWrap: 'wrap' }}>
+                      <Testimonial
+                        title="Testimonial"
+                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua"
+                      />
+                      {/* <img src={Haroon} alt="" className={classes.ourTeamImage}/> */}
+                      <Testimonial
+                        title="Testimonial"
+                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua"
+                      />
+                      <Testimonial
+                        title="Testimonial"
+                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua"
+                      />
+                      <Testimonial
+                        title="Testimonial"
+                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua"
+                      />
+                  </div>
+                </Carousel.Item>
+                
+              </Carousel>
             </Row>
-        </div>
-        
+          </div>
         </Container>
       </Container>
-
     </section>
-    )
+  );
 }

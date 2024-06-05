@@ -11,9 +11,11 @@ export const MyContextProvider=({children}) => {
 
     const serviceRef=useRef();
     const contactUsRef=useRef();
+    const appointmentRef = useRef();
+    const portfolioRef = useRef();
     
     return(
-        <MyContext.Provider value={{serviceRef, contactUsRef}}>
+        <MyContext.Provider value={{serviceRef, contactUsRef, appointmentRef, portfolioRef}}>
             {children}
         </MyContext.Provider>
     )

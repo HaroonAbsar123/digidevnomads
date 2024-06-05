@@ -1,13 +1,14 @@
 .card {
-    background-color: rgb(255, 255, 255);
-    padding: 2rem;
-    max-width: 320px;
-    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(50px) !important;
+    -webkit-backdrop-filter: blur(50px) !important;
+    padding: 2rem !important;
+    border-radius: 1rem!important;
     border: none !important;
-    box-shadow: 0 5px 30px  rgba(5, 5, 5, 0.15);
+    box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.24);
     flex: 1;
-    min-width: 300px !important;
-    
+    min-width: 250px;
+    width: 100% !important;
   }
   
   .header {
@@ -15,6 +16,7 @@
     align-items: center;
     grid-gap: 1rem;
     gap: 1rem;
+    color: #ccc;
   }
   
   .header .image {
@@ -30,6 +32,7 @@
     justify-content: center;
     grid-gap: 0.125rem;
     gap: 0.125rem;
+    color: #f8a323;
   }
   
   .stars svg {
@@ -40,9 +43,10 @@
   .name {
     margin-top: 0.25rem;
     font-size: 1.125rem;
+    line-height: 1.75rem;
     font-weight: 600;
     --tw-text-opacity: 1;
-    color: #1e1e1e;
+    color: #eee;
   }
   
   .message {
@@ -50,5 +54,5 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     margin-top: 0.5rem;
-    color: rgba(107, 114, 128, 1);
+    color: #ccc;
   }

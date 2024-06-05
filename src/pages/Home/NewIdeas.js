@@ -13,7 +13,7 @@ export default function NewIdeas(){
           >
         <div className={classes.container}>
             <Row style={{display: 'flex', gap: '20px'}}>
-                <Col>
+                <Col style={{minWidth: '250px'}}>
                 <img src={WebDev} alt="" style={{maxHeight: '80px'}} />
                 <div className={classes.cardTitle}>FIND NEW IDEAS</div>
                 <div className={classes.cardDescription}>methods and techniques for taking raw data - mining for insights and years of experience will</div>
@@ -21,7 +21,7 @@ export default function NewIdeas(){
                 {/* <Col style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                 <div style={{borderTop: '5px dotted #7e7e7e', flex: 1}}></div>
                 </Col> */}
-                <Col>
+                <Col style={{minWidth: '250px'}}>
                 <img src={WebDev} alt="" style={{maxHeight: '80px'}} />
                 <div className={classes.cardTitle}>DIAGNOSIS & ANALYSIS</div>
                 <div className={classes.cardDescription}>methods and techniques for taking raw data - mining for insights and years of experience will</div>
@@ -29,7 +29,7 @@ export default function NewIdeas(){
                 {/* <Col style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                 <div style={{borderTop: '5px dotted #7e7e7e', flex: 1}}></div>
                 </Col> */}
-                <Col>
+                <Col style={{minWidth: '250px'}}>
                 <img src={WebDev} alt="" style={{maxHeight: '80px'}} />
                 <div className={classes.cardTitle}>IMPLEMENT & RESULT</div>
                 <div className={classes.cardDescription}>methods and techniques for taking raw data - mining for insights and years of experience will</div>
