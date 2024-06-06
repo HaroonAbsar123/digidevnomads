@@ -13,7 +13,8 @@ function NavBar() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { serviceRef, contactUsRef, appointmentRef, portfolioRef } = useContext(MyContext);
+  const { serviceRef, contactUsRef, appointmentRef, portfolioRef } =
+    useContext(MyContext);
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -38,6 +39,7 @@ function NavBar() {
         <Navbar.Brand
           onClick={() => {
             navigate("/");
+            window.scrollTo(0, 0);
           }}
           className="d-flex"
         >
@@ -74,10 +76,7 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                
-                to={
-                  "#services"
-                }
+                to={"#services"}
                 onClick={() => {
                   updateExpanded(false);
                   serviceRef.current.scrollIntoView({
@@ -102,7 +101,6 @@ function NavBar() {
                   });
                 }}
               >
-                
                 OUR WORK
               </Nav.Link>
             </Nav.Item>
@@ -110,9 +108,7 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to={
-                  "#contact-us"
-                }
+                to={"#contact-us"}
                 onClick={() => {
                   updateExpanded(false);
                   contactUsRef.current.scrollIntoView({
@@ -129,13 +125,25 @@ function NavBar() {
               <button
                 as={Link}
                 className="buttonHome"
-                style={{margin: '0px 0px 0px 10px', padding: '0px 10px', maxHeight: '30px', height: 'max-content', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem'}}
+                style={{
+                  marginTop: '0px',
+                  padding: "0px 10px",
+                  maxHeight: "30px",
+                  height: "max-content",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "1rem",
+                  flex: 1,
+                  alignSelf: 'center',
+                  width: '100%',
+                }}
                 onClick={() => {
                   updateExpanded(false);
-                  window.location.hash = '#book-appointment';
+                  window.location.hash = "#book-appointment";
                   appointmentRef.current.scrollIntoView({
                     behavior: "smooth",
-                    block: "center",
+                    block: "start",
                   });
                 }}
               >

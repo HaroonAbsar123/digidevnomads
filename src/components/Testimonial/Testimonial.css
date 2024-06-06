@@ -6,9 +6,8 @@
     border-radius: 1rem!important;
     border: none !important;
     box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.24);
-    flex: 1;
+    flex: 1 !important;
     min-width: 250px !important;
-    width: 100% !important;
   }
   
   .header {

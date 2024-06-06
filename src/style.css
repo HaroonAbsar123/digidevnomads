@@ -129,7 +129,6 @@ button:focus {
   .navbar {
     padding: 0.5rem 2rem !important;
     font-size: 1.1rem !important;
-    /* background-color: rgba(30, 30, 30, 0.9) !important; */
     background-color: rgba(22, 22, 30, 0.3) !important;
     backdrop-filter: blur(15px) !important;
   }

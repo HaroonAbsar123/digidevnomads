@@ -9,6 +9,7 @@ import elevateTalent from "../../Assets/Logos/elevateTalent.png";
 import InstantFinance from "../../Assets/Logos/Instant Finance.png";
 import Staffry from "../../Assets/Logos/staffry.png";
 import FastCash4Iphone from "../../Assets/Logos/Fastcash4iphones.png";
+import powerPosting from "../../Assets/Logos/powerposting.png"
 
 
 export default function CompaniesWorkingWith() {
@@ -21,7 +22,8 @@ export default function CompaniesWorkingWith() {
     InstantFinance,
     Staffry,
     FastCash4Iphone,
-    elevateTalent
+    elevateTalent,
+    powerPosting
   ].map((image) => ({
     id: crypto.randomUUID(),
     image

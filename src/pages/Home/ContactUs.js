@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import classes from "./ContactUs.module.css";
 import { db } from "../../firebase";
-import { collection, addDoc, getDocs, where, query, updateDoc } from "firebase/firestore";
+import { collection, addDoc,  updateDoc } from "firebase/firestore";
 import { TextField, Button } from "@mui/material";
+import { toast } from "react-hot-toast";
 
 export default function ContactUs() {
   const [firstName, setFirstName] = useState("");
@@ -35,6 +36,43 @@ export default function ContactUs() {
 
 const handleSubmit = async (e) => {
   e.preventDefault()
+  const formData={
+    name: firstName,
+    email: email,
+    message: howCanWeSupport,
+    submittedOn: new Date
+  }
+
+  
+  try {
+  const collectionRef = collection(db, "contactUs");
+  const docRef = await addDoc(collectionRef, formData);
+
+  await updateDoc(docRef, { id: docRef.id });
+
+  setFirstName("");
+  setEmail("");
+  setHowCanWeSupport("");
+  
+  toast.success("Submitted", {
+    style: {
+      borderRadius: "10px",
+      background: "#333",
+      color: "#fff",
+    },
+  });
+
+} catch (e) {
+  toast.error("Error occurred, Please try again", {
+    style: {
+      borderRadius: "10px",
+      background: "#333",
+      color: "#fff",
+    },
+  });
+}
+
+
 };
 
   return (

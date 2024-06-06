@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import classes from "./OurTeam.module.css";
 
@@ -8,8 +8,17 @@ import Carousel from "react-bootstrap/Carousel";
 import { MyContext } from "../../Context/MyContext";
 
 export default function OurTeam() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
 
-  
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const {appointmentRef} = useContext(MyContext)
 
   const containerRef = useRef(null);
@@ -21,6 +30,40 @@ export default function OurTeam() {
     }
   }, []);
 
+  const testimonials=[
+    {
+      title: "Testimonial",
+      review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+    {
+      title: "Testimonial",
+      review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+    {
+      title: "Testimonial",
+      review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+    {
+      title: "Testimonial",
+      review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+    {
+      title: "Testimonial",
+      review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+    {
+      title: "Testimonial",
+      review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+    {
+      title: "Testimonial",
+      review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+    {
+      title: "Testimonial",
+      review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+  ]
 
 
   return (
@@ -47,7 +90,7 @@ export default function OurTeam() {
                   window.location.hash = '#book-appointment';
                   appointmentRef.current.scrollIntoView({
                     behavior: "smooth",
-                    block: "center",
+                    block: "start",
                   });
                 }}  className="buttonHome">LET'S MEET</button>
                 </div>
@@ -92,8 +135,36 @@ ref={containerRef}>
               </Col>
             </Row>
             <Row style={{ flex: 1, marginTop: "10px" }}>
-              <Carousel interval={2000} style={{overflow: 'hidden', padding: '0px'}} indicators={false} controls={false} >
-                <Carousel.Item>
+            <Carousel interval={2000} style={{ overflow: 'hidden', padding: '0px' }} indicators={false} controls={false}>
+      {
+        isMobile
+          ? testimonials?.map((item, index) => (
+            <Carousel.Item key={index}>
+              <div style={{ display: 'flex', width: '100%' }}>
+                <Testimonial title={item?.title} review={item.review} />
+              </div>
+            </Carousel.Item>
+          ))
+          : testimonials?.reduce((acc, item, index) => {
+            const groupIndex = Math.floor(index / 4);
+            if (!acc[groupIndex]) acc[groupIndex] = [];
+            acc[groupIndex].push(
+              <div key={index} style={{ flex: 1, width: '25%' }}>
+                <Testimonial title={item?.title} review={item.review} />
+              </div>
+            );
+            return acc;
+          }, []).map((group, index) => (
+            <Carousel.Item key={index}>
+              <div style={{ display: 'flex', gap: '10px', width: '100%', flexWrap: 'wrap' }}>
+                {group}
+              </div>
+            </Carousel.Item>
+          ))
+      }
+    </Carousel>
+
+                {/* <Carousel.Item>
                   <div style={{ flex: 1, display: "flex", gap: "10px", width: '100%', flexWrap: 'wrap' }}>
                       <Testimonial
                         title="Testimonial"
@@ -101,7 +172,6 @@ ref={containerRef}>
                       Sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua"
                       />
-                      {/* <img src={Haroon} alt="" className={classes.ourTeamImage}/> */}
                       <Testimonial
                         title="Testimonial"
                         review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -121,69 +191,8 @@ ref={containerRef}>
                       aliqua"
                       />
                   </div>
-                </Carousel.Item>
+                </Carousel.Item> */}
 
-                <Carousel.Item>
-                  <div style={{ flex: 1, display: "flex", gap: "10px", width: '100%', flexWrap: 'wrap'}}>
-                      <Testimonial
-                        title="Testimonial"
-                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua"
-                      />
-                      {/* <img src={Haroon} alt="" className={classes.ourTeamImage}/> */}
-                      <Testimonial
-                        title="Testimonial"
-                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua"
-                      />
-                      <Testimonial
-                        title="Testimonial"
-                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua"
-                      />
-                      <Testimonial
-                        title="Testimonial"
-                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua"
-                      />
-                  </div>
-                </Carousel.Item>
-
-                <Carousel.Item>
-                  <div style={{ flex: 1, display: "flex", gap: "10px", width: '100%',flexWrap: 'wrap' }}>
-                      <Testimonial
-                        title="Testimonial"
-                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua"
-                      />
-                      {/* <img src={Haroon} alt="" className={classes.ourTeamImage}/> */}
-                      <Testimonial
-                        title="Testimonial"
-                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua"
-                      />
-                      <Testimonial
-                        title="Testimonial"
-                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua"
-                      />
-                      <Testimonial
-                        title="Testimonial"
-                        review="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua"
-                      />
-                  </div>
-                </Carousel.Item>
-                
-              </Carousel>
             </Row>
           </div>
         </Container>

@@ -22,7 +22,8 @@
     flex: 1;
     transition: all 0.3s ease-in-out;
     height: max-content !important;
-    align-items: flex-start !important;
+    align-items: stretch !important;
+    gap: 10px;
 }
 
 .serviceColumnTitle{

@@ -36,7 +36,7 @@ function Footer() {
                   window.location.hash = '#book-appointment';
                   appointmentRef.current.scrollIntoView({
                     behavior: "smooth",
-                    block: "center",
+                    block: "start",
                   });
                 }} className="buttonHome">LET'S TALK</button>
       </div>

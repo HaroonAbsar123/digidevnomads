@@ -39,7 +39,7 @@ export default function Portfolio(){
                 <Col style={{flex: 1, display: 'flex', alignItems: 'center', padding: "0px", minWidth: '300px'}}>
                     <div>
                 <div className={classes.titleColumnTitle} >A BRIEF OVERVIEW OF OUR WORK</div>
-            <button onClick={handleShowAll} className="buttonHome">VIEW { showAll ? "LESS" : "MORE"} WORK</button>
+            <button onClick={handleShowAll} className="buttonHome">{ showAll ? "COLLAPSE" : "VIEW MORE WORK"}</button>
             </div>
                 </Col>
                 <Col style={{flex: 1, padding: '0px', maxHeight: '300px', minWidth: '300px'}} className={classes.serviceColumn}>

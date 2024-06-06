@@ -14,6 +14,16 @@ import Two from '../Assets/Projects/6.jpg';
 import One from '../Assets/Projects/1.jpg';
 import Three from '../Assets/Projects/7.jpg';
 import ourTeam from "../Assets/ourTeam.jpg";
+import powerPosting from "../Assets/Logos/powerposting.png"
+
+
+import webDevelopment from "../Assets/webDevelopment.jpg";
+import mobileDevelopment from "../Assets/mobileDevelopment.jpg";
+import socialMediaMarketing from "../Assets/socialMediaMarketing.jpg";
+import emailMarketing from "../Assets/emailMarketing.jpg";
+import amazon from "../Assets/amazon.jpg";
+import virtualAssistant from "../Assets/virtualAssistant.jpg";
+import graphicDesigning from "../Assets/graphicDesigning.jpg";
 
 export const MyContext = createContext({});
 
@@ -31,7 +41,15 @@ const images = [
   Two,
   One,
   Three,
-  ourTeam
+  ourTeam,
+  powerPosting,
+  webDevelopment,
+  mobileDevelopment,
+  socialMediaMarketing,
+  emailMarketing,
+  amazon,
+  virtualAssistant,
+  graphicDesigning
 ];
 
 export const MyContextProvider = ({ children }) => {

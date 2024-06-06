@@ -20,6 +20,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import BookAppointment from "./pages/BookAppointment/BookAppointment";
 import Particle from "./pages/Particle";
 import Loader from "./components/Loader/Loader";
+import { Toaster } from "react-hot-toast";
 
 const darkTheme = createTheme({
   palette: {
@@ -62,6 +63,10 @@ function App() {
     </ThemeProvider>
       </div>
       {/* </MyContextProvider> */}
+      <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
     </Router>
   );
 }
