@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -13,9 +13,13 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
+import logo from "../../Assets/logo.png";
+import { MyContext } from "../../Context/MyContext";
+import Icons from "../SocialIcons/Icons";
 
 function Footer() {
   // };
+  const {appointmentRef} = useContext(MyContext)
   let date = new Date();
   let year = date.getFullYear();
 
@@ -28,7 +32,13 @@ function Footer() {
       <div className="footerImageText">LET'S TALK ABOUT PROJECT</div>
       <div className={classes.para} >At DigiDevNomads we specialize in designing, marketing, web development, mobile application development and email marketing.</div>
       <div style={{margin: '20px 10px'}}>
-        <button className="buttonHome">LET'S TALK</button>
+        <button onClick={() => {
+                  window.location.hash = '#book-appointment';
+                  appointmentRef.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
+                }} className="buttonHome">LET'S TALK</button>
       </div>
       <div style={{marginTop: '40px'}} className={classes.para}>@2023 DigiDevNomads. All Rights Reserved</div>
 
@@ -37,15 +47,15 @@ function Footer() {
       </div>
 
 
-      <Row >
+      <Row  style={{alignItems: 'center'}}>
         <Col md="4" className="footer-copywright">
-          <div>DigiDevNomads</div>
+          <div><img src={logo} height={"20px"} width="auto" alt="" />{" "} DigiDevNomads</div>
         </Col>
         <Col md="4" className="footer-copywright">
           <div>Copyright © {year}</div>
         </Col>
         <Col md="4" className="footer-body" style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '10px'}}>
-              <a
+              {/* <a
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -65,7 +75,8 @@ function Footer() {
                 rel="noopener noreferrer"
               >
                 <AiFillInstagram />
-              </a>
+              </a> */}
+              <Icons />
         </Col>
       </Row>
 

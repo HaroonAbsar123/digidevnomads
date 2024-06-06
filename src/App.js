@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Preloader from "../src/pages/Pre";
 import Navbar from "./pages/Navbar";
 import Home from "./pages/Home/Home";
@@ -13,12 +13,13 @@ import ScrollToTop from "./pages/ScrollToTop";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { MyContextProvider } from "./Context/MyContext";
+import { MyContext, MyContextProvider } from "./Context/MyContext";
 import { getAuth } from "firebase/auth";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import BookAppointment from "./pages/BookAppointment/BookAppointment";
 import Particle from "./pages/Particle";
+import Loader from "./components/Loader/Loader";
 
 const darkTheme = createTheme({
   palette: {
@@ -29,11 +30,12 @@ const darkTheme = createTheme({
 
 function App() {
   const [load, upadateLoad] = useState(true);
+  const {allImagesLoaded} = useContext(MyContext);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       upadateLoad(false);
-    }, 1500);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -44,8 +46,8 @@ function App() {
     <Router>
       
     
-      <MyContextProvider>
-      <Preloader load={load} />
+      {/* <MyContextProvider> */}
+      <Preloader load={!allImagesLoaded} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
@@ -59,7 +61,7 @@ function App() {
         {/* <FinalFooter /> */}
     </ThemeProvider>
       </div>
-      </MyContextProvider>
+      {/* </MyContextProvider> */}
     </Router>
   );
 }

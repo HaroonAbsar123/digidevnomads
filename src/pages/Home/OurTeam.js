@@ -1,14 +1,17 @@
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import classes from "./OurTeam.module.css";
 
-import Haroon from "../../Assets/ourTeam.jpg";
+import ourTeam from "../../Assets/ourTeam.jpg";
 import Testimonial from "../../components/Testimonial/Testimonial";
 import Carousel from "react-bootstrap/Carousel";
+import { MyContext } from "../../Context/MyContext";
 
 export default function OurTeam() {
 
   
+  const {appointmentRef} = useContext(MyContext)
+
   const containerRef = useRef(null);
   const cardRef = useRef(null);
 
@@ -40,7 +43,13 @@ export default function OurTeam() {
                   <div className={classes.titleColumnTitle}>
                     PEOPLE LOVED OUR TEAM
                   </div>
-                  <button className="buttonHome">VIEW ALL TEAM</button>
+                  <button onClick={() => {
+                  window.location.hash = '#book-appointment';
+                  appointmentRef.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
+                }}  className="buttonHome">LET'S MEET</button>
                 </div>
               </Col>
               <Col className={classes.ourTeamCol}>
@@ -74,7 +83,7 @@ ref={containerRef}>
     <div class="tracker tr-23"></div>
     <div class="tracker tr-24"></div>
     <div class="tracker tr-25"></div>
-    <div id="card" ref={cardRef} style={{ backgroundImage: `url(${Haroon})`, borderRadius: '1rem', height: '300px', width: '100%', backgroundSize: 'cover', backgroundPosition: 'center' }} className={classes.serviceColumn}>
+    <div id="card" ref={cardRef} style={{ backgroundImage: `url(${ourTeam})`, borderRadius: '1rem', height: '300px', width: '100%', backgroundSize: 'cover', backgroundPosition: 'center' }} className={classes.serviceColumn}>
     </div>
   </div>
 </div>

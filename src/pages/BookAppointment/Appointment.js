@@ -7,7 +7,7 @@ import dayjs from 'dayjs';
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import classes from './Appointment.module.css';
-import { FormControl, Select, Button, MenuItem } from "@mui/material";
+import { FormControl, Select, Button, MenuItem, TextField } from "@mui/material";
 import { MyContext } from "../../Context/MyContext";
 
 dayjs.extend(utc);
@@ -25,6 +25,11 @@ export default function Appointment() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
   const [selectedTimezone, setSelectedTimezone] = useState('Asia/Karachi');
+
+  
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
 
   const {appointmentRef} = useContext(MyContext)
 
@@ -80,12 +85,57 @@ export default function Appointment() {
       <div className={classes.container}>
 
 
-        <Row>
-          <Col style={{ textAlign: 'center', flex: 1, minWidth: '300px' }}>
+        
+      <div className={classes.colHeading} style={{marginBottom: '10px'}}>Provide Your Information</div>
+
+      <div
+                style={{
+                  display: "flex",
+                  flex: 1,
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  gap: "10px",
+                  marginBottom: "10px",
+                  flexWrap: 'wrap'
+                }}
+              >
+                <TextField
+                  style={{ flex: 1, minWidth: '300px' }}
+                  label="Name"
+                  variant="outlined"
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  required
+                />
+
+                <TextField
+                  style={{ flex: 1, minWidth: '300px' }}
+                  label="Email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+
+
+
+        <Row style={{padding: "0px 12px", gap: '10px'}}>
+          <Col style={{ textAlign: 'center', flex: 1, minWidth: '300px', borderRadius: '3px', background: 'rgba(255,255,255,0.01)', backdropFilter: 'blur(15px)', padding: '20px 10px' }}>
             <div className={classes.colHeading}>Select Date</div>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DateCalendar
-                style={{transform: 'scale(1.2)', marginTop: '45px', marginBottom: '30px'}}
+                style={{ marginTop: '45px', marginBottom: '30px'}}
+                className={classes.calendar}
                 disablePast
                 shouldDisableDate={disableDates}
                 onChange={handleDateChange}
@@ -93,7 +143,7 @@ export default function Appointment() {
               />
             </LocalizationProvider>
           </Col>
-          <Col style={{ flex: 1, textAlign: 'center', minWidth: '300px' }}>
+          <Col style={{ textAlign: 'center', flex: 1, minWidth: '300px', borderRadius: '3px', background: 'rgba(255,255,255,0.01)', backdropFilter: 'blur(15px)', padding: '20px 10px' }}>
             <div className={classes.colHeading}>Available Starting Times</div>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               {selectedDate && renderTimes()}
@@ -101,9 +151,12 @@ export default function Appointment() {
           </Col>
         </Row>
         
-      <button style={{marginTop: '0px', width: 'max-content', alignSelf: 'center', marginBottom: '2rem'}} onClick={handleSubmit} className="buttonHome">
+      {/* <button style={{marginTop: '0px', width: 'max-content', alignSelf: 'center', marginTop: '30px'}} onClick={handleSubmit} className="buttonHome">
               Submit
-            </button>
+            </button> */}
+            <Button variant="contained" style={{width: '100%', marginTop: '10px', background: 'linear-gradient(90deg, #03a9f4, #f441a5)', color: '#fff'}} onClick={handleSubmit}>
+            Submit
+            </Button>
 
       </div>
       

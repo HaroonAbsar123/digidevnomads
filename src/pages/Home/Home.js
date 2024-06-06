@@ -23,7 +23,7 @@ function Home() {
       <CompaniesWorkingWith />
       <OurServices />
       <Portfolio />
-      <NewIdeas />
+      {/* <NewIdeas /> */}
       <OurTeam />
       <ImageInText />
       <ContactUs />

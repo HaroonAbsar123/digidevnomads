@@ -5,6 +5,7 @@ import Match4You from "../../Assets/Logos/Match4You.png";
 import IBInnovators from "../../Assets/Logos/IB Innovators.png";
 import TheFundedTrader from "../../Assets/Logos/The Funded Trader .png";
 import EZL from "../../Assets/Logos/ezl.png";
+import elevateTalent from "../../Assets/Logos/elevateTalent.png";
 import InstantFinance from "../../Assets/Logos/Instant Finance.png";
 import Staffry from "../../Assets/Logos/staffry.png";
 import FastCash4Iphone from "../../Assets/Logos/Fastcash4iphones.png";
@@ -20,6 +21,7 @@ export default function CompaniesWorkingWith() {
     InstantFinance,
     Staffry,
     FastCash4Iphone,
+    elevateTalent
   ].map((image) => ({
     id: crypto.randomUUID(),
     image

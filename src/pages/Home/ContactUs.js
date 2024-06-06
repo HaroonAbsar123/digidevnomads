@@ -122,7 +122,7 @@ const handleSubmit = async (e) => {
               </div>
               <Button
                 variant="contained"
-                style={{ width: '100%' }}
+                style={{width: '100%', background: 'linear-gradient(90deg, #03a9f4, #f441a5)', color: '#fff'}}
                 type="submit"
               >
                 SUBMIT

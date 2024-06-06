@@ -22,6 +22,7 @@
     flex: 1;
     transition: all 0.3s ease-in-out;
     height: max-content !important;
+    align-items: flex-start !important;
 }
 
 .serviceColumnTitle{
@@ -56,6 +57,9 @@
 
 }
 
+.iconService{
+    display: flex;
+}
 
 
 @media (max-width: 767px) {
@@ -69,4 +73,9 @@
     font-size: 2.3rem;
     line-height: 2.5rem;
 }
+
+.iconService{
+    display: none;
+}
+
   }

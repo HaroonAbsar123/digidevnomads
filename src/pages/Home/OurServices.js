@@ -54,9 +54,9 @@ export default function OurServices() {
                   minWidth: '250px' }}>
                 <Card>
                   <div
+                  className={classes.iconService}
                     style={{
                       flex: 0.3,
-                      display: "flex",
                       justifyContent: "center",
                       filter: "blur(0px)",
                     }}
@@ -81,9 +81,9 @@ export default function OurServices() {
                       Duis aute irure dolor in reprehenderit in voluptate velit
                       esse cillum dolore eu fugiat nulla pariatur.
                     </div>
-                    <button className={classes.readMoreButton}>
+                    {/* <button className={classes.readMoreButton}>
                       READ DETAILS
-                    </button>
+                    </button> */}
                   </div>
                 </Card>
               </Col>
@@ -100,9 +100,9 @@ export default function OurServices() {
                   minWidth: '250px' }}>
                 <Card>
                   <div
+                  className={classes.iconService}
                     style={{
                       flex: 0.3,
-                      display: "flex",
                       justifyContent: "center",
                     }}
                   >
@@ -114,7 +114,7 @@ export default function OurServices() {
                   </div>
                   <div style={{ flex: 1 }}>
                     <div className={classes.serviceColumnTitle}>
-                      WEB SOLUTION
+                      MOBILE APPLICATION
                     </div>
                     <div className={classes.serviceColumnPara}>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -126,9 +126,9 @@ export default function OurServices() {
                       Duis aute irure dolor in reprehenderit in voluptate velit
                       esse cillum dolore eu fugiat nulla pariatur.
                     </div>
-                    <button className={classes.readMoreButton}>
+                    {/* <button className={classes.readMoreButton}>
                       READ DETAILS
-                    </button>
+                    </button> */}
                   </div>
                 </Card>
               </Col>
@@ -136,9 +136,9 @@ export default function OurServices() {
                   minWidth: '250px' }}>
                 <Card>
                   <div
+                  className={classes.iconService}
                     style={{
                       flex: 0.3,
-                      display: "flex",
                       justifyContent: "center",
                     }}
                   >
@@ -150,7 +150,7 @@ export default function OurServices() {
                   </div>
                   <div style={{ flex: 1 }}>
                     <div className={classes.serviceColumnTitle}>
-                      WEB SOLUTION
+                      SOCIAL MEDIA MARKETING
                     </div>
                     <div className={classes.serviceColumnPara}>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -162,9 +162,9 @@ export default function OurServices() {
                       Duis aute irure dolor in reprehenderit in voluptate velit
                       esse cillum dolore eu fugiat nulla pariatur.
                     </div>
-                    <button className={classes.readMoreButton}>
+                    {/* <button className={classes.readMoreButton}>
                       READ DETAILS
-                    </button>
+                    </button> */}
                   </div>
                 </Card>
               </Col>
@@ -184,11 +184,11 @@ export default function OurServices() {
                     minWidth: '250px' }}>
                   <Card>
                     <div
-                      style={{
-                        flex: 0.3,
-                        display: "flex",
-                        justifyContent: "center",
-                      }}
+                  className={classes.iconService}
+                    style={{
+                      flex: 0.3,
+                      justifyContent: "center",
+                    }}
                     >
                       <img
                         src={WebDevIcon}
@@ -198,7 +198,7 @@ export default function OurServices() {
                     </div>
                     <div style={{ flex: 1 }}>
                       <div className={classes.serviceColumnTitle}>
-                        WEB SOLUTION
+                        EMAIL MARKETING
                       </div>
                       <div className={classes.serviceColumnPara}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -210,9 +210,9 @@ export default function OurServices() {
                         Duis aute irure dolor in reprehenderit in voluptate velit
                         esse cillum dolore eu fugiat nulla pariatur.
                       </div>
-                      <button className={classes.readMoreButton}>
+                      {/* <button className={classes.readMoreButton}>
                         READ DETAILS
-                      </button>
+                      </button> */}
                     </div>
                   </Card>
                 </Col>
@@ -220,11 +220,11 @@ export default function OurServices() {
                     minWidth: '250px' }}>
                   <Card>
                     <div
-                      style={{
-                        flex: 0.3,
-                        display: "flex",
-                        justifyContent: "center",
-                      }}
+                  className={classes.iconService}
+                    style={{
+                      flex: 0.3,
+                      justifyContent: "center",
+                    }}
                     >
                       <img
                         src={WebDevIcon}
@@ -234,7 +234,7 @@ export default function OurServices() {
                     </div>
                     <div style={{ flex: 1 }}>
                       <div className={classes.serviceColumnTitle}>
-                        WEB SOLUTION
+                        GRAPHIC DESIGNING
                       </div>
                       <div className={classes.serviceColumnPara}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -246,9 +246,9 @@ export default function OurServices() {
                         Duis aute irure dolor in reprehenderit in voluptate velit
                         esse cillum dolore eu fugiat nulla pariatur.
                       </div>
-                      <button className={classes.readMoreButton}>
+                      {/* <button className={classes.readMoreButton}>
                         READ DETAILS
-                      </button>
+                      </button> */}
                     </div>
                   </Card>
                 </Col>

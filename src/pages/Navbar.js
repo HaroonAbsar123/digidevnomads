@@ -76,10 +76,7 @@ function NavBar() {
                 as={Link}
                 
                 to={
-                  (location.pathname === "/book-appointment") ?
-                  "/#our-services"
-                  :
-                  "#our-services"
+                  "#services"
                 }
                 onClick={() => {
                   updateExpanded(false);
@@ -89,14 +86,14 @@ function NavBar() {
                   });
                 }}
               >
-                OUR SERVICES
+                SERVICES
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="#portfolio"
+                to="#our-work"
                 onClick={() => {
                   updateExpanded(false);
                   portfolioRef.current.scrollIntoView({
@@ -106,7 +103,7 @@ function NavBar() {
                 }}
               >
                 
-                PORTFOLIO
+                OUR WORK
               </Nav.Link>
             </Nav.Item>
 
@@ -114,9 +111,6 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to={
-                  (location.pathname === "/book-appointment") ?
-                  "/#contact-us"
-                  :
                   "#contact-us"
                 }
                 onClick={() => {
@@ -135,7 +129,7 @@ function NavBar() {
               <button
                 as={Link}
                 className="buttonHome"
-                style={{margin: '0px 0px 0px 10px', padding: '0px 10px', maxHeight: '30px', height: 'max-content', fontSize: '1rem'}}
+                style={{margin: '0px 0px 0px 10px', padding: '0px 10px', maxHeight: '30px', height: 'max-content', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem'}}
                 onClick={() => {
                   updateExpanded(false);
                   window.location.hash = '#book-appointment';

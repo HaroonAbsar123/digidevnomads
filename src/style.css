@@ -183,7 +183,9 @@ button:focus {
   height: 5px;
   width: 0;
   border-radius: 16px;
-  background: #ccc;
+  
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  /* background: #ccc; */
   bottom: 1px;
   left: 0;
   z-index: -1;
@@ -243,7 +245,7 @@ button:focus {
   padding-top: 50px !important;
 }
 
-.home-section {
+/* .home-section {
   position: relative;
   z-index: 1;
   background-image: url("./Assets/bbblurry.svg");
@@ -251,18 +253,88 @@ button:focus {
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
+} */
+
+.home-section {
+  position: relative;
+  z-index: 1;
+  min-height: 45rem;
+  overflow: hidden;
 }
+
+.home-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background-image: url("./Assets/bbblurry.svg");
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  /* animation: animateBackground 10s linear infinite; */
+}
+
+@keyframes animateBackground {
+  0% {
+    opacity: 0.8;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  60% {
+    opacity: 0.75;
+  }
+  70% {
+    opacity: 0.55;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
 
 
 .footer-section {
   position: relative;
   z-index: 1;
-  background-image: url("./Assets/bbblurry\ \(2\).svg");
-  background-size: cover;
-  background-position: bottom center;
-  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
+.footer-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-image: url("./Assets/bbblurry\ \(2\).svg");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  /* animation: animateBackground 10s linear infinite; */
+}
 
 
 .footer-content {
@@ -727,7 +799,7 @@ button:focus {
   padding-left: 10px;
   padding-right: 10px;
   cursor: pointer;
-  color: #fff;
+  color: #16161e;
   min-width: 9em;
   height: 3em;
   line-height: 2em;

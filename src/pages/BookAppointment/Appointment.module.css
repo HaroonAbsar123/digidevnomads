@@ -16,9 +16,8 @@
     text-align: left;
     display: flex;
     flex-direction: column;
-    gap: 50px;
     padding: 1rem;
-    border-radius: 3rem;
+    border-radius: 1rem;
     backdrop-filter: blur(100px);
     -webkit-backdrop-filter: blur(100px);
     background-color: rgba(255,255,255,0.03);
@@ -38,10 +37,13 @@
   .colHeading{
     font-size: 1.5rem;
     font-weight: bold;
-    margin: 20px auto;
+    margin-bottom: 20px;
+    align-self: center;
   }
 
-
+.calendar{
+  transform: scale(1.2);
+}
   
 @media (max-width: 767px) {
   .container{
@@ -51,5 +53,8 @@
   
   .title{
     font-size: 2rem;
+  }
+  .calendar{
+    transform: scale(1);
   }
 }
