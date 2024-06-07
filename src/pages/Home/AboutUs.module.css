@@ -1,0 +1,103 @@
+
+.sectionContainer{
+    position: relative;
+    z-index: 1;
+    background-image: url("../../Assets/bbblurry\ \(1\).svg");
+    min-height: 10rem;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0rem 3rem;
+    margin-top: 2rem;
+  }
+  
+  .container{
+      max-width: 1300px;
+      margin: 0rem auto;
+      text-align: left;
+      display: flex;
+      flex-direction: row;
+      border-radius: 1rem;
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(100px);
+      background-color: rgba(255,255,255,0.03);
+      min-height: 10rem;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 10px;
+      overflow: hidden;
+      flex-wrap: wrap;
+      text-align: left;
+      transition: all 0.3s ease-in-out;
+
+  
+  }
+
+  .container:hover{
+    box-shadow: 5px 10px 30px rgba(34,163,239, 0.3);
+
+  }
+  
+  
+  .imageContainer{
+    min-height: 200px;
+    flex: 1;
+    background-image: url("../../Assets/aboutUs.jpg");
+    background-size: cover;
+    background-position: center;
+    min-width: 200px;
+    background-repeat: no-repeat;
+  }
+  
+  .textContainer{
+    flex: 2;
+    padding: 1rem;
+    min-width: 300px;
+
+  }
+
+    .title{
+      font-size: 2.5rem;
+      font-weight: bold;
+      align-self: center;
+      margin: 10px auto;
+      flex: 1;
+    }
+
+    
+.para{
+    font-size: 1rem;
+    color: #eee;
+    margin-bottom: 1.5rem;
+}
+
+
+  
+    .colHeading{
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  
+  .calendar{
+    transform: scale(1.2);
+  }
+    
+  @media (max-width: 767px) {
+    
+  .sectionContainer{
+    padding: 0rem 1rem;
+  }
+  
+    .container{
+      border-radius: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .title{
+      font-size: 2rem;
+    }
+    .calendar{
+      transform: scale(1);
+    }
+  }

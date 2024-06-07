@@ -34,7 +34,7 @@ export default function CompaniesWorkingWith() {
   return (
     <div style={{padding: '3rem 0rem'}}>
         <div className={classes.heading}>
-            Over a 1000 businesses growing with DigiDevNomads
+            Over a 100 businesses growing with DigitaliNation
         </div>
     <div className={classes.inner}>
       <div className={classes.wrapper}>

@@ -59,6 +59,7 @@ export const MyContextProvider = ({ children }) => {
   const contactUsRef = useRef();
   const appointmentRef = useRef();
   const portfolioRef = useRef();
+  const aboutUsRef = useRef();
 
   useEffect(() => {
     const loadImages = async () => {
@@ -77,7 +78,7 @@ export const MyContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <MyContext.Provider value={{ serviceRef, contactUsRef, appointmentRef, portfolioRef, allImagesLoaded }}>
+    <MyContext.Provider value={{ serviceRef, contactUsRef, appointmentRef, portfolioRef, allImagesLoaded, aboutUsRef }}>
       {children}
     </MyContext.Provider>
   );

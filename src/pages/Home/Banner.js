@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import classes from './Banner.module.css';
 import homeImageMain from '../../Assets/homeImageMain.png'
 import HoverImage from "./HoverImage";
+import { MyContext } from "../../Context/MyContext";
 function Banner() {
   const navigate = useNavigate();
+  const {aboutUsRef} = useContext(MyContext);
+
+  const slogan="Elevate your digital presence"
 
   return (
     <section style={{ position: 'relative' }}>
@@ -14,12 +18,18 @@ function Banner() {
           <div className={classes.textContainer}>
             <div>
             <div className={classes.upperText}>
-              BUILD DIGITAL BRAND WITH EXPERTS
+            ONE STOP DIGITAL SOLUTIONS
             </div>
             <div className={classes.middleText}>
-              DEVELOP THE DIGITAL UNIVERSE
+              {slogan?.toUpperCase()}
             </div>
-            <button className="buttonHome">ABOUT US</button>
+            <button onClick={() => {
+              aboutUsRef.current.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
+
+            }} className="buttonHome">ABOUT US</button>
             </div>
           </div>
           <div className={classes.imageContainer}>

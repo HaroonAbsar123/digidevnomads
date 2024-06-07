@@ -13,6 +13,7 @@ import {
   Button,
   MenuItem,
   TextField,
+  InputLabel,
 } from "@mui/material";
 import { MyContext } from "../../Context/MyContext";
 import Autocomplete from "@mui/material/Autocomplete";
@@ -109,6 +110,7 @@ export default function Appointment() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
   const [country, setCountry] = useState(null);
+  const [service,setService] = useState("");
   const [note, setNote] = useState("");
   const [selectedTimezone, setSelectedTimezone] = useState("Asia/Karachi");
 
@@ -153,6 +155,8 @@ export default function Appointment() {
       error = "Please select date";
     } else if (!selectedTime) {
       error = "Please select time";
+    } else if (!service || service === "") {
+      error = "Please select service";
     }
 
     if (error) {
@@ -175,6 +179,7 @@ export default function Appointment() {
         name: name,
         email: email,
         note: note,
+        service: service,
         country,
         submittedOn: new Date
       };
@@ -188,6 +193,7 @@ export default function Appointment() {
       setEmail("");
       setCountry(null);
       setNote("");
+      setService("");
       setSelectedTime(null)
       
       toast.success("Appointment Booked!", {
@@ -380,6 +386,27 @@ export default function Appointment() {
             />
           )}
         />
+
+<FormControl fullWidth style={{marginBottom: '10px'}}>
+  <InputLabel id="demo-simple-select-label">Select Service *</InputLabel>
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    value={service}
+    label="Select Service *"
+    required
+    onChange={(e) => {setService(e.target.value)}}
+  >
+    <MenuItem value={""}>Select</MenuItem>
+    <MenuItem value={"Web Development"}>Web Solutions</MenuItem>
+    <MenuItem value={"Mobile Application"}>Mobile Application</MenuItem>
+    <MenuItem value={"Social Media Marketing"}>Social Media Marketing</MenuItem>
+    <MenuItem value={"Email Marketing"}>Email Marketing</MenuItem>
+    <MenuItem value={"Graphic Designing"}>Graphic Designing</MenuItem>
+    <MenuItem value={"Amazon Virtual Assistant"}>Amazon Virtual Assistant</MenuItem>
+    <MenuItem value={"Virtual Administrative Assistant"}>Virtual Administrative Assistant</MenuItem>
+  </Select>
+</FormControl>
 
         <TextField
           style={{

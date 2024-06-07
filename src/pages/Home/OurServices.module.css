@@ -23,18 +23,19 @@
     transition: all 0.3s ease-in-out;
     height: max-content !important;
     align-items: stretch !important;
-    gap: 10px;
+    gap: 15px;
 }
 
 .serviceColumnTitle{
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
+    margin-bottom: 5px;
 }
 
 .serviceColumnPara{
     font-size: 1rem;
-    color: #ccc;
+    color: #eee;
 }
 
 .serviceColumnIcon{

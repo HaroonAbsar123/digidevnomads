@@ -100,7 +100,7 @@ export default function OurServices() {
               <RenderColService
                 image={socialMediaMarketing}
                 title="SOCIAL MEDIA MARKETING"
-                description={`Our social media marketing services are designed to amplify your brand's online presence. We create targeted strategies to engage your audience across various platforms, including Facebook, Instagram, LinkedIn, and Twitter. By crafting compelling content and leveraging advanced analytics, we drive engagement and conversions. Our team ensures your brand's voice is consistent and impactful, helping you build a loyal customer base and achieve measurable growth.`}
+                description={`Our social media marketing services are designed to amplify your brand's online presence. We create targeted strategies to engage your audience across various platforms, including Facebook, Instagram, LinkedIn, Tiktok and Twitter. By crafting compelling content and leveraging advanced analytics, we drive engagement and conversions. Our team ensures your brand's voice is consistent and impactful, helping you build a loyal customer base and achieve measurable growth.`}
               />
             </Row>
 

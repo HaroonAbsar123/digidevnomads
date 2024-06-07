@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Appointment from "../BookAppointment/Appointment";
 import Particle from "../Particle";
+import AboutUs from "./AboutUs";
 import Banner from "./Banner";
 import CompaniesWorkingWith from "./CompaniesWorkingWith";
 import ContactUs from "./ContactUs";
@@ -21,6 +22,7 @@ function Home() {
     <Particle />
       <Banner />
       <CompaniesWorkingWith />
+      <AboutUs />
       <OurServices />
       <Portfolio />
       {/* <NewIdeas /> */}

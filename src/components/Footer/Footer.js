@@ -30,7 +30,7 @@ function Footer() {
       <Container className="footer-content">
     <div className={classes.Footer}>
       <div className="footerImageText">LET'S TALK ABOUT PROJECT</div>
-      <div className={classes.para} >At DigiDevNomads we specialize in designing, marketing, web development, mobile application development and email marketing.</div>
+      <div className={classes.para} >At DigitaliNation we specialize in designing, marketing, web development, mobile application development, email marketing, graphic designing and virtual assistance.</div>
       <div style={{margin: '20px 10px'}}>
         <button onClick={() => {
                   window.location.hash = '#book-appointment';
@@ -40,7 +40,7 @@ function Footer() {
                   });
                 }} className="buttonHome">LET'S TALK</button>
       </div>
-      <div style={{marginTop: '40px'}} className={classes.para}>@2023 DigiDevNomads. All Rights Reserved</div>
+      <div style={{marginTop: '40px'}} className={classes.para}>@2023 DigitaliNation. All Rights Reserved</div>
 
       <div style={{flex: 1, maxWidth: '90%', margin: '30px auto', borderBottom: '1px solid #ccc', opacity: '0.5'}}>
 
@@ -49,7 +49,7 @@ function Footer() {
 
       <Row  style={{alignItems: 'center'}}>
         <Col md="4" className="footer-copywright">
-          <div><img src={logo} height={"20px"} width="auto" alt="" />{" "} DigiDevNomads</div>
+          <div><img src={logo} height={"20px"} width="auto" alt="" />{" "} DigitaliNation</div>
         </Col>
         <Col md="4" className="footer-copywright">
           <div>Copyright © {year}</div>

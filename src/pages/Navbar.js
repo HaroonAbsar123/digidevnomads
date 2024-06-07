@@ -137,6 +137,7 @@ function NavBar() {
                   flex: 1,
                   alignSelf: 'center',
                   width: '100%',
+                  color: "#fff"
                 }}
                 onClick={() => {
                   updateExpanded(false);
@@ -147,7 +148,7 @@ function NavBar() {
                   });
                 }}
               >
-                BOOK APPOINTMENT
+                BOOK A CALL
               </button>
             </Nav.Item>
           </Nav>
