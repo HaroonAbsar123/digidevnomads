@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -12,9 +12,16 @@ function NavBar() {
   const [navColour, updateNavbar] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-
   const { serviceRef, contactUsRef, appointmentRef, portfolioRef } =
     useContext(MyContext);
+
+  useEffect(() => {
+    if(location.hash){
+      window.location = "";
+    }
+  }, [])
+
+
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -26,7 +33,6 @@ function NavBar() {
 
   window.addEventListener("scroll", scrollHandler);
 
-  // auth.signOut()
 
   return (
     <Navbar
@@ -57,21 +63,6 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
-            {/* <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                HOME
-              </Nav.Link>
-            </Nav.Item> */}
-
-            {/* <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="#about-us"
-                onClick={() => updateExpanded(false)}
-              >
-                 ABOUT US
-              </Nav.Link>
-            </Nav.Item> */}
 
             <Nav.Item>
               <Nav.Link

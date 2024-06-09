@@ -434,7 +434,7 @@ export default function Appointment() {
               borderRadius: "3px",
               background: "rgba(255,255,255,0.01)",
               backdropFilter: "blur(15px)",
-              padding: "20px 10px",
+              padding: "20px 5px",
             }}
           >
             <div className={classes.colHeading}>Select Date</div>
@@ -457,7 +457,7 @@ export default function Appointment() {
               borderRadius: "3px",
               background: "rgba(255,255,255,0.01)",
               backdropFilter: "blur(15px)",
-              padding: "20px 10px",
+              padding: "20px 5px",
             }}
           >
             <div className={classes.colHeading}>Available Starting Times</div>

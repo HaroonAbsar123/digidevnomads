@@ -24,6 +24,11 @@
     height: max-content !important;
     align-items: stretch !important;
     gap: 15px;
+    transition: all 0.3s ease-in-out;
+
+}
+.serviceColumn:hover{
+    box-shadow: 0px 0px 10px 5px rgba(34,163,239, 0.3);
 }
 
 .serviceColumnTitle{
